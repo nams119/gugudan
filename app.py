@@ -106,13 +106,14 @@ st.markdown(
     /* 모바일에서 3개짜리 버튼(컬럼)이 세로로 쪼개지지 않고 1줄 가로로 나오도록 강제 적용 */
     @media (max-width: 600px) {
         div[data-testid="column"] {
-            width: 32% !important;
-            flex: 1 1 32% !important;
-            min-width: 32% !important;
+            width: calc(33.333% - 10px) !important;
+            flex: 1 1 calc(33.333% - 10px) !important;
+            min-width: 0 !important;
         }
         div[data-testid="stHorizontalBlock"] {
-            gap: 2% !important;
+            gap: 10px !important;
             flex-wrap: nowrap !important;
+            justify-content: center !important;
         }
     }
     </style>
