@@ -58,6 +58,14 @@ st.set_page_config(
 st.markdown(
     """
     <style>
+    /* 화면 여백 줄이기 */
+    .block-container {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
     div.stButton > button {
         width: 100%;
         height: 80px;
