@@ -102,6 +102,19 @@ st.markdown(
         margin-bottom: 10px;
         margin-top: 5px;
     }
+    
+    /* 모바일에서 3개짜리 버튼(컬럼)이 세로로 쪼개지지 않고 1줄 가로로 나오도록 강제 적용 */
+    @media (max-width: 600px) {
+        div[data-testid="column"] {
+            width: 32% !important;
+            flex: 1 1 32% !important;
+            min-width: 32% !important;
+        }
+        div[data-testid="stHorizontalBlock"] {
+            gap: 2% !important;
+            flex-wrap: nowrap !important;
+        }
+    }
     </style>
 """,
     unsafe_allow_html=True,
