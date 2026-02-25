@@ -58,25 +58,25 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    /* 화면 여백 줄이기 */
+    /* 화면 여백 최대한 줄이기 */
     .block-container {
-        padding-top: 2rem !important;
-        padding-bottom: 2rem !important;
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
+        padding-top: 1rem !important;
+        padding-bottom: 0.5rem !important;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
     }
     
     div.stButton > button {
         width: 100%;
-        height: 80px;
-        border-radius: 25px;
+        height: 60px;
+        border-radius: 20px;
         background-color: #FFF9CE;
         border: 3px solid #FFC93C;
-        box-shadow: 0 8px 0 #FFC93C;
+        box-shadow: 0 6px 0 #FFC93C;
         transition: all 0.1s ease-in-out;
     }
     div.stButton > button p {
-        font-size: 32px !important;
+        font-size: 26px !important;
         font-weight: 900 !important;
         color: #FF5E5E !important;
         margin: 0;
@@ -95,11 +95,12 @@ st.markdown(
         box-shadow: 0 2px 0 #FFC93C;
     }
     .big-font {
-        font-size: 40px !important;
+        font-size: 32px !important;
         font-weight: bold !important;
         text-align: center;
         color: #1f77b4;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+        margin-top: 5px;
     }
     </style>
 """,
@@ -293,21 +294,19 @@ else:
             val = opts[idx]
             if val == correct:
                 html = f"""
-                <div style="position:relative; width:100%; height:80px; border-radius:25px; background-color:#FFF9CE; border:3px solid #FFC93C; display:flex; align-items:center; justify-content:center;">
-                    <p style="font-size:32px; font-weight:900; color:#FF5E5E; margin:0; z-index:2;">{val}</p>
-                    <div style="position:absolute; top:-15px; bottom:-15px; left:-5px; right:-5px; border:6px solid #FF3366; border-radius:50%; z-index:3; opacity:0.9; transform: rotate(-5deg);"></div>
+                <div style="position:relative; width:100%; height:60px; border-radius:20px; background-color:#FFF9CE; border:3px solid #FFC93C; display:flex; align-items:center; justify-content:center;">
+                    <p style="font-size:26px; font-weight:900; color:#FF5E5E; margin:0; z-index:2;">{val}</p>
+                    <div style="position:absolute; top:-10px; bottom:-10px; left:-5px; right:-5px; border:5px solid #FF3366; border-radius:50%; z-index:3; opacity:0.9; transform: rotate(-5deg);"></div>
                 </div>
                 """
             else:
                 html = f"""
-                <div style="position:relative; width:100%; height:80px; border-radius:25px; background-color:#F5F5F5; border:3px solid #E0E0E0; display:flex; align-items:center; justify-content:center; opacity:0.6;">
-                    <p style="font-size:32px; font-weight:900; color:#A0A0A0; margin:0;">{val}</p>
+                <div style="position:relative; width:100%; height:60px; border-radius:20px; background-color:#F5F5F5; border:3px solid #E0E0E0; display:flex; align-items:center; justify-content:center; opacity:0.6;">
+                    <p style="font-size:26px; font-weight:900; color:#A0A0A0; margin:0;">{val}</p>
                 </div>
                 """
             col.markdown(html, unsafe_allow_html=True)
 
-        st.write("")
-        st.write("")
         if st.button("다음 문제 👉", use_container_width=True):
             st.session_state.show_wrong_feedback = False
             st.session_state.need_new_question = True

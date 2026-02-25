@@ -13,11 +13,11 @@ def render_grid_animation(rows, cols, emoji):
         .grid-container {{
             display: grid;
             grid-template-columns: repeat(9, 1fr);
-            gap: 4px;
+            gap: 2px;
             justify-content: center;
             align-items: center;
             margin: 0 auto;
-            max-width: 400px; /* 전체 가로폭 고정 (스마트폰 최적화) */
+            max-width: 320px; /* 스마트폰 세로 높이에 맞춰 가로폭 더 축소 */
         }}
         .grid-item {{
             aspect-ratio: 1 / 1; /* 완벽한 정사각형 유지 */
@@ -90,8 +90,8 @@ def render_grid_animation(rows, cols, emoji):
     </script>
     """
 
-    # 항상 9x9 고정이므로 화면 높이가 변하지 않고 넉넉한 고정값(예: 450px) 사용
-    st.components.v1.html(html_content, height=450)
+    # 전체 그리드 높이도 스마트폰에 맞춰 축소
+    st.components.v1.html(html_content, height=340)
 
 
 # 테스트용 코드 (직접 실행할 때만)
